@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      background-image: url("purple.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    /* NAVIGATION BAR */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 15px;
+      background-color: rgba(75, 0, 130, 0.95);
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(106, 13, 173, 0.5);
+      backdrop-filter: blur(6px);
+    }
+
+    li {
+      margin: 0 15px;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+    }
+
+    li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: #e0b0ff;
+      transition: width 0.3s ease;
+    }
+
+    li a:hover::after {
+      width: 100%;
+    }
+
+    li a:hover {
+      background-color: #6a0dad;
+      box-shadow: 0 0 15px #b266ff;
+      transform: scale(1.05);
+    }
+
+    /* MAIN CONTENT */
+    .content {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 40px;
+      width: 70%;
+      margin: 80px auto;
+      box-shadow: 0px 0px 25px rgba(106, 13, 173, 0.5);
+      transition: transform 0.3s ease;
+      animation: floatUp 1.5s ease-in-out;
+    }
+
+    .content:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      color: #4b0082;
+      font-size: 45px;
+      margin-bottom: 10px;
+      font-family: "Times New Roman", serif;
+    }
+
+    h2 {
+      color: #6a0dad;
+      font-size: 25px;
+      font-weight: normal;
+      font-family: "Georgia", serif;
+    }
+
+    p {
+      font-size: 20px;
+      color: #2c2c54;
+      line-height: 1.8;
+      margin-top: 20px;
+      font-family: "Courier New", monospace;
+    }
+
+    b {
+      color: #6a0dad;
+    }
+
+    hr {
+      border: 1px solid #b266ff;
+      width: 60%;
+      margin: 20px auto;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: rgba(75, 0, 130, 0.95);
+      color: white;
+      font-family: "Times New Roman", serif;
+      font-size: 16px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 -3px 15px rgba(106, 13, 173, 0.5);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes floatUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li><a href="Home Page.html">Home Page</a></li>
+    <li><a href="About Me.html">About Me</a></li>
+    <li><a href="ICT.html">ICT</a></li>
+    <li><a href="AP.html">AP</a></li>
+  </ul>
+
+  <div class="content">
+    <h1>Welcome to My Personal Website!!</h1>
+    <hr>
+    <h2>Hi, I'm Micah Jimenez, a 9 - Fairness student!</h2>
+    <p>
+      This website is a small glimpse into who I am, what I love, and the people who mean the most to me.  
+      Explore the tabs above to learn more about my personal life, my ICT and AP experiences, and everything that makes me who I am. <br>
+<br>
+P.S<br>
+<br>
+Every code used here were the codes I learned during ICT class and codes I taught myself using W3Schools and tutorials on YouTube!! <br>
+    </p>
+    <p><b>Enjoy exploring my page!</b> 💜</p>
+  </div>
+
+  <div class="footer">
+    © 2025 Micah Angelique R. Jimenez — All Rights Reserved
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Micah’s Personal Website</title>
+
+<style>
+body {
+  background-color: #f3e6ff;
+  background-image: url("purple.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2d004d;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1.5s ease-in;
+}
+
+/* Navigation bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+  background-color: rgba(106, 13, 173, 0.8);
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(80, 0, 120, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+ul li a:hover {
+  background-color: #b266ff;
+  box-shadow: 0 0 15px #d6b3ff;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.header h1 {
+  font-size: 40px;
+  color: #4b0082;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(150, 0, 255, 0.2);
+}
+
+.header h2 {
+  font-size: 20px;
+  color: #5c00a3;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.header p {
+  font-size: 17px;
+  width: 70%;
+  margin: 10px auto;
+  color: #2d004d;
+}
+
+/* Sections */
+.section {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  width: 80%;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(120, 0, 180, 0.3);
+  text-align: center;
+  animation: fadeInUp 1.5s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 25px rgba(160, 80, 255, 0.5);
+}
+
+.section h1 {
+  color: #4b0082;
+  border-bottom: 2px solid #b266ff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.section h2 {
+  color: #5a009b;
+  margin-top: 20px;
+}
+
+.section p {
+  font-size: 17px;
+  color: #2d004d;
+  line-height: 1.6;
+  width: 90%;
+  margin: 10px auto;
+}
+
+/* Images & Videos */
+img, video {
+  border-radius: 12px;
+  border: 2px solid #a64dff;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(100, 0, 150, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover, video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(150, 0, 255, 0.5);
+}
+
+/* Horizontal rule */
+hr {
+  width: 70%;
+  border: none;
+  border-top: 2px dashed #a64dff;
+  margin: 40px auto;
+  opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(106, 13, 173, 0.85);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 50px;
+  backdrop-filter: blur(5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+  <li><a href="Home Page.html">Home Page</a></li>
+  <li><a href="About Me.html">About Me</a></li> 
+  <li><a href="ICT.html">ICT</a></li>
+  <li><a href="AP.html">AP</a></li>
+</ul>
+
+<div class="header">
+  <h1>Micah Angelique R. Jimenez</h1>
+  <h2> 9 – Fairness</h2>
+  <p>Get to know more about me here in my personal space!! (you could already tell what my fave color is based on the color I chose for my whole website :DD) Hope you'll enjoy!! </p>
+</div>
+
+
+<div class="section">
+  <h1>Personal Details</h1>
+  <p>I see myself as an ambivert, though I often feel more like an introvert. I find peace in quiet moments and prefer deep, meaningful connections over large crowds. I’m a sensitive person who genuinely wants to help others, especially through leadership. For me, leading is not about power or control but about care and understanding. It means guiding others, listening to them, and helping them grow. My sensitivity allows me to connect with people deeply, and that makes me a better, more compassionate leader. </p>
+
+  <img src="mics.jpg" width="500" height="600">
+  <video width="500" height="400" controls>
+    <source src="sing.mp4" type="video/mp4">
+  </video>
+
+  <h2>My Name</h2>
+  <p> <i><b>Micah Angelique R. Jimenez</b></i>.</p>
+
+  <h2>My Age</h2>
+  <p> <i><b>15 years old</b></i>.</p>
+
+  <h2>My Birthday</h2>
+  <p><strong>June 30, 2010</strong>.</p>
+
+  <h2>My Favorites</h2>
+  <p>I’ve always loved singing and playing instruments, finding pieces of myself in every melody I create. Musicals and theater, especially Broadway, never fail to move me, they remind me how art can speak when words can’t. Beyond music, I find comfort in reading and writing, whether through poems, poetic essays, songs, or stories shaped by truth in journalism. Leadership has always been a part of me since elementary, not for recognition, but because guiding others makes me feel whole. Above all, I cherish the quiet moments with my loved ones and never forget to pray for them, and with them, because love feels deeper when it’s lifted in prayer. </p>
+</div>
+
+<hr>
+
+
+<div class="section">
+  <h1>My Circle of Friends</h1>
+  <p>This is a bit personal, but it’s a part of who I am. I’ve had my fair share of friendships and friend groups ever since elementary. I held them close to my heart and saw many of them as my own siblings. I loved them deeply, treasured every laughter, every memory, and every moment that made me feel like I finally belonged. But as time passed, things changed, bonds that once felt unbreakable slowly faded, leaving quiet spaces where joy used to live. <br>
+
+As much as I tried to hold on, I learned that sometimes, letting go is also an act of love, love for myself. I realized that I needed to put myself first, to rediscover my worth, to heal, and to value the few people who truly stayed by my side. I once thought I would fill this e-port with the names of those I called my forever friends, but maybe they weren’t meant to be part of my story right now. <br>
+
+I believe everything happens for a reason, and that God has His own timing. Maybe He’s taking away what’s temporary to make space for what’s meant to last. So I’ll keep trusting His plan, believing that one day, He’ll send the right people into my life, and when He does, I’ll be ready to welcome them with an open heart :>> <br>
+
+But for now, let me introduce to you the people who had stayed by my side (aside from my family ofcourse) during my lowest and when it felt like almost every one was against me. <br> </p>
+
+  <h2>My People <33</h2>
+  <p>As someone who validates feelings a lot, I focus on the real connections I have with my friends by staying through good times not only the bad times.</p>
+
+  <h2>Events with My Favorite People!</h2>
+  <p>These are memories I cherish with people I love!</p>
+
+  <img src="love.jpg" width="600" height="700">
+  <h2>Jim Tabile <33 </h2>
+  <p>
+    He's someone that I love a lot :>> Because after years of being unseen, unheard, and misunderstood, he became the quiet answer to all those prayers I thought God ignored. He actually saw the good in me when no one else did. He appreciated the smallest efforts I made, the kind that others never even noticed. He loved me not for what I could give, but for who I already was. <br>
+
+He makes me feel safe. He’s patient with my moods, gentle with my fears, and never makes me feel like too much. He stays, even when I’m silent. He listens, even when I don’t have the right words. When I break down, he doesn’t walk away, he holds me together quietly, like I’m something worth saving. <br>
+
+He reminds me that I’m not hard to love. That I deserve soft things, peace, and happiness too. He helps me see beauty in myself again, the kind that was buried under everything I have experienced. <br>
+
+He’s everything I prayed for, the person I asked God to bring into my life. I’m lucky to have him. No matter how much he thinks he’s luckier to have me, he would never know how grateful I actually am for him. He may never hear how I talk to God about him, how I pray for him every night, but I always do. I always pray for him to stay, for him to be okay. Despite the misunderstandings we had, we've been together for one year now and ongoing because we continue to put God at the center of our relationship and I pray that we continue to do so :>> <br>
+
+This is one memorable picture with him because this was taken during our first year together!! We celebrated the day with my family, went to watch a circus together and ate together :>> I have many more memorable moments with him but by far this is my most favorite one :>> <br>
+ </p>
+
+  <img src="nm.jpg" width="600" height="550">
+  <h2>MnM! (Maeur, Nina and Micah)</h2>
+  <p>
+    After everything I’ve been through with friendships, these two were the ones who stayed. They helped me through the moments I thought I’d face alone and reminded me what it truly feels like to have people you can trust. Right now, they’re the only best friends I have, and even though our bond is still new, I can already feel their sincerity. They’re genuine, kind, and real, and I’m so thankful for that. <br>
+
+I’m grateful for the way they made me feel seen again, for the warmth they brought when I thought I had no one left. I pray that this friendship continues to grow, that we become even closer, and that we create more memories worth keeping. I thank God for sending them into my life because maybe they’re part of the healing I’ve been praying for. :>> <br>
+
+This is one memorable picture I have with them because this was right before performing nutrichant where we won 1st place in!! We took a picture that day as the three people who had led the class through the performance task. By far, it is one of my favorite pictures with them :>> <br>
+  </p>
+</div>
+
+<hr>
+
+<div class="section">
+  <h1>My Family!!</h1>
+
+  <img src="fama.jpg" width="600" height="500">
+  <h2>All About My Family!</h2>
+  <p>
+    I have a small family of three, and I love my mom and dad deeply. They’ve always been my biggest supporters, standing by me in everything I choose to do. They guide me with patience and love, teaching me what’s right and reminding me that no matter what happens, I’ll always have a home in them.
+  </p>
+
+  <img src="fam.jpg" width="600" height="500">
+  <h2>My Family’s Characteristics</h2>
+  <p>
+    My mom is the toughest person I know. She’s the one who would do anything for me without a second thought. She’s my best friend, the one who always listens to my rants, tries her best to understand me, and stays patient even when I make it hard. She’s truly the best mom I could ever ask God for. My dad, on the other hand, is someone who always wants the best for both me and my mom. He’s not perfect, but then again, no one is. Despite everything we’ve been through, he’s the one I can always seek guidance from, the one whose words I’ll always carry with me. I love them both so much, and I thank God every day for blessing me with the best parents I could ever ask for.
+  </p>
+
+  <img src="fammem.jpg" width="600" height="500">
+  <h2>My Family’s Events</h2>
+  <p>
+    During every Holy Week, my family has a tradition of doing Visita Iglesia together with just me, my mom, and my dad. It’s something I’ve always cherished, a quiet time of reflection and togetherness. My dad once made me promise that I’ll continue this tradition with my own family in the future, and I know I will. It’s a promise I intend to keep, not just for him but for the faith and love that bind us together. :>>
+  </p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2025 Micah Angelique R. Jimenez — All Rights Reserved
+</div>
+
+</body>
+</html>

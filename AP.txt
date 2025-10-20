@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP - 2nd Quarter Lessons</title>
+  <style>
+    body {
+      background-color: #3b2a4e;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f9f2ff;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #5c3d63;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(140, 90, 60, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      color: #fff7f0;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #7a5270;
+      color: #fbe9d0;
+      box-shadow: 0 0 10px rgba(180, 130, 255, 0.3);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      background: linear-gradient(to right, #8b6b83, #5a3f63);
+      padding: 40px 20px;
+      border-bottom: 3px solid #d8b4e2;
+      box-shadow: 0 0 30px rgba(180, 130, 255, 0.15);
+    }
+
+    header h1 {
+      color: #fbeff8;
+      font-size: 2em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: #f7e3d7;
+      font-size: 1.1em;
+    }
+
+    /* Content */
+    .content {
+      padding: 50px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .lesson {
+      background: rgba(120, 90, 100, 0.3);
+      border: 1px solid rgba(200, 170, 150, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(140, 100, 80, 0.2);
+      padding: 20px 30px;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      max-height: 100px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .lesson:hover {
+      background: rgba(130, 100, 120, 0.45);
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(200, 170, 255, 0.3);
+      max-height: 900px;
+    }
+
+    .lesson h2 {
+      color: #f3d5ff;
+      font-size: 1.3em;
+      margin: 0 0 10px;
+      border-left: 4px solid #e3baff;
+      padding-left: 10px;
+    }
+
+    .lesson p {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .lesson:hover p,
+    .lesson:hover .flip-card {
+      opacity: 1;
+    }
+
+    .formula {
+      background-color: rgba(60, 40, 50, 0.7);
+      border-left: 3px solid #e3baff;
+      border-radius: 8px;
+      padding: 10px 15px;
+      color: #f8eaff;
+      font-family: "Courier New", monospace;
+      font-size: 1.1em;
+      margin: 10px 0;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(200, 160, 255, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .formula:hover {
+      box-shadow: 0 0 25px rgba(230, 190, 255, 0.3);
+    }
+
+    /* Flip Card for Images - Decreased */
+    .flip-card {
+      background-color: transparent;
+      width: 80%;
+      height: 320px;
+      margin: 25px auto;
+      perspective: 1000px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      box-shadow: 0 0 15px rgba(200, 160, 255, 0.3);
+      border-radius: 12px;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+    }
+
+    .flip-card-front img,
+    .flip-card-back img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+      background-color: #3b2a4e;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #f4e6dc;
+      font-size: 0.9em;
+      background-color: #4b3552;
+      margin-top: 50px;
+      border-top: 2px solid #d8b4e2;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px;
+      }
+      .flip-card {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="Personal Info.html">Home Page</a></li>
+      <li><a href="About Me.html">About Me</a></li>
+      <li><a href="ICT.html">ICT</a></li>
+      <li><a href="AP.html">AP</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Araling Panlipunan — 2nd Quarter Lessons</h1>
+    <p>Exploring the concepts of demand, elasticity, and economics 💜🤎</p>
+  </header>
+
+  <div class="content">
+    <div class="lesson">
+      <h2>Lesson 1 — Demand</h2>
+      <p>Ang <b>demand</b> ay tumutukoy sa kagustuhan at kakayahan ng mga mamimili na bumili ng mga produkto o serbisyo sa iba’t ibang presyo sa loob ng isang takdang panahon. Ipinapaliwanag nito kung paano naaapektuhan ng pagbabago sa presyo ang dami ng gustong bilhin ng mga tao.
+Ayon sa <b>Batas ng Demand (Law of Demand)</b>, kapag tumaas ang presyo ng isang produkto, bumababa ang dami ng gusto o kayang bilhin, at kapag bumaba ang presyo, tumataas naman ang dami ng demand. Ipinapakita nito ang <b>magkasalungat na ugnayan</b> sa pagitan ng presyo at demand.</p>
+      <div class="formula">Qd = a - bP</div>
+      <p>Where:<br>Qd = Quantity demanded<br>a = intercept<br>b = slope<br>P = price</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="demand curve.jpg" alt="Demand Graph 1"></div>
+          <div class="flip-card-back"><img src="demand.jpg" alt="Demand Example 2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>Lesson 2 — Supply</h2>
+      <p>Ang <b>supply</b> ay tumutukoy sa dami ng mga produkto o serbisyo na handa at kayang ipagbili ng mga prodyuser sa iba’t ibang presyo sa loob ng takdang panahon. Ayon sa <b>Batas ng Supply (Law of Supply)</b>, may <b>tuwirang ugnayan</b> sa pagitan ng presyo at dami ng supply — kapag tumaas ang presyo, mas handang magtustos ng mas marami ang mga prodyuser, at kapag bumaba ang presyo, mas kaunti ang kanilang ilalabas sa merkado.</p>
+      <div class="formula">Qs = c + dP</div>
+      <p>Where:<br>Qs = Quantity supplied<br>c = intercept<br>d = slope<br>P = price</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="supply curve.jpg" alt="Supply Graph 1"></div>
+          <div class="flip-card-back"><img src="supply.jpg" alt="Supply Example 2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>Lesson 3 — Price Elasticity</h2>
+      <p>Ang <b>price elasticity</b> ay sumusukat sa kung gaano kasensitibo o karespondi ang demand o supply sa pagbabago ng presyo. Ipinapakita nito kung paano tumutugon ang mga mamimili o prodyuser kapag may pagbabago sa presyo. <br>
+<br>
+Kapag <b>(E_d > 1)</b>, <b>elastic</b> ang demand — madaling nagbabago ayon sa presyo. <br>
+Kapag <b>(E_d < 1)</b>, <b>inelastic</b> ang demand — halos hindi nagbabago kahit may pagbabago sa presyo. <br>
+Kapag <b>(E_d = 1)</b>, <b>unitary elastic</b> — proporsyonal ang pagbabago ng presyo at demand. <br>
+Mahalaga ang pag-aaral ng elasticity sa pagpaplano ng tamang presyo ng produkto. Halimbawa, ang mga <b>luho o luxury goods</b> ay karaniwang elastic, samantalang ang mga <b>pangunahing pangangailangan</b> tulad ng pagkain at gamot ay inelastic.<br></p>
+      <div class="formula">Ed = (Q₂ - Q₁)/((Q₁ + Q₂)/2) ÷ (P₂ - P₁)/((P₁ + P₂)/2)</div>
+      <p>Where:<br>Ed = elasticity of demand<br>Q₁, Q₂ = quantities<br>P₁, P₂ = prices</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="pe.jpg" alt="Elasticity Graph 1"></div>
+          <div class="flip-card-back"><img src="pee.jpg" alt="Elasticity Example 2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>Lesson 4 — Market Equilibrium</h2>
+      <p>AAng <b>market equilibrium</b> ay nangyayari kapag ang dami ng demand at dami ng supply ay nagkakapantay sa isang partikular na presyo. Ang presyong ito ay tinatawag na <b>equilibrium price (Pₑ)</b> at ang dami ay <b>equilibrium quantity (Qₑ)</b>.
+<br>
+Kapag mas mataas ang presyo kaysa sa equilibrium, nagkakaroon ng <b>labis na supply (surplus)</b>; kapag mas mababa naman, nagkakaroon ng <b>kakulangan (shortage)</b>.
+Natural na nag-aadjust ang merkado upang maibalik ang balanse. Ang pag-unawa sa equilibrium ay mahalaga upang makita kung paano nagtutulungan ang demand at supply para mapanatiling matatag ang ekonomiya.</p>
+      <div class="formula">Q_d = Q_s</div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="me g.jpg" alt="Market Equilibrium Graph"></div>
+          <div class="flip-card-back"><img src="me.jpg" alt="Market Equilibrium Example"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>Lesson 5 — Iba't Ibang Estruktura ng Pamilihan</h2>
+      <p>Ang <b>estruktura ng pamilihan</b> ay tumutukoy sa paraan ng ugnayan ng mga mamimili at prodyuser sa isang industriya. May apat na pangunahing uri:</p>
+      <div class="formula">
+        * <b>Perfect Competition (Ganap na Kompetisyon)</b> – Maraming nagbebenta ng halos magkatulad na produkto; walang kontrol sa presyo. <br>
+<br>
+* <b>Monopolistic Competition (Di-Ganap na Kompetisyon)</b> – Maraming nagbebenta ngunit may kaunting pagkakaiba sa produkto. <br>
+<br>
+* <b>Oligopoly</b> – Kakaunti lamang ang nagbebenta at may malaking impluwensya sa presyo. <br>
+<br>
+* <b>Monopoly (Isahang Pagbebenta)</b> – Iisang kompanya lamang ang may kontrol sa presyo at produksyon. <br> 
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="estt.jpg" alt="Market Structure Graph"></div>
+          <div class="flip-card-back"><img src="est.jpg" alt="Market Structure Example"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>Lesson 6 — Bahaging Ginagampanan ng Pamahalaan</h2>
+      <p>Malaki ang papel ng <b>pamahalaan</b> sa pagpapanatili ng balanseng ekonomiya sa pamamagitan ng <b>regulasyon ng pamilihan</b>. Layunin nitong maprotektahan ang mga mamimili laban sa <b>pang-aabuso</b>, <b>labis na presyo</b>, at <b>hindi patas na kalakalan</b>. <br>
+<br>
+Ang mga regulasyong ito ay tumutulong upang maiwasan ang sobrang taas o sobrang baba ng presyo at mapanatili ang maayos na daloy ng ekonomiya.</p>
+      <div class="formula">
+        <b>*<b>Price Control</b> – kabilang ang <b>Price Ceiling</b> (pinakamataas na presyong pinapayagan ng pamahalaan), <b>Price Floor</b> (pinakamababang presyong itinakda, tulad ng minimum wage), at <b>Price Freeze</b> (panandaliang pagpigil ng pamahalaan sa anumang pagbabago ng presyo ng mga pangunahing bilihin sa panahon ng krisis o kalamidad upang maprotektahan ang mga mamimili). <br>
+<br>
+*<b>Antitrust Laws</b> – mga batas laban sa monopolyo at hindi patas na kompetisyon. <br>
+<br>
+*<b>Subsidy</b> – tulong pinansyal ng pamahalaan sa ilang sektor upang mapababa ang gastos sa produksyon.<br>
+
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="price.jpg" alt="Price Control"></div>
+          <div class="flip-card-back"><img src="pricee.jpg" alt="Price Regulation"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with 💜🤎 by Micah Angelique R. Jimenez — AP Portfolio</p>
+  </footer>
+
+</body>
+</html>

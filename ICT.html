@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ICT</title>
+  <style>
+    body {
+      background-color: #140a24;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f5eaff;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #2d1b4e;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(150, 90, 255, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      color: #f0eaff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #422c70;
+      color: #d9b7ff;
+      box-shadow: 0 0 10px rgba(187, 134, 252, 0.3);
+    }
+
+    /* Page Header */
+    header {
+      text-align: center;
+      background: linear-gradient(to right, #3a2368, #281846);
+      padding: 40px 20px;
+      border-bottom: 3px solid #b57bff;
+      box-shadow: 0 0 30px rgba(150, 100, 255, 0.2);
+    }
+
+    header h1 {
+      color: #e5cfff;
+      font-size: 2em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: #c8b1ff;
+      font-size: 1.1em;
+    }
+
+    /* Main Content Container */
+    .content {
+      padding: 40px 100px;
+    }
+
+    section {
+      background-color: rgba(50, 30, 90, 0.4);
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
+      padding: 25px 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 15px rgba(180, 130, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(190, 140, 255, 0.25);
+    }
+
+    h2 {
+      color: #d0aaff;
+      border-left: 4px solid #b57bff;
+      padding-left: 10px;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      background-color: rgba(40, 20, 70, 0.6);
+      padding: 10px 15px;
+      border-radius: 8px;
+      line-height: 1.6;
+      margin: 10px 0;
+      border-left: 3px solid #a67cff;
+      transition: background-color 0.2s ease;
+    }
+
+    p:hover {
+      background-color: rgba(55, 30, 90, 0.7);
+    }
+
+    img, video {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 90%;
+      height: auto;
+      box-shadow: 0 0 15px rgba(170, 120, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover, video:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px rgba(200, 150, 255, 0.4);
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #3a2b5a;
+      margin: 60px 0;
+    }
+
+    /* === NEW SECTION: EVENTS (different design) === */
+    .events {
+      background-color: #1c1035;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(180, 130, 255, 0.2);
+    }
+
+    .events h2 {
+      color: #dcb6ff;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .event-card {
+      background-color: rgba(60, 40, 100, 0.5);
+      width: 260px;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(160, 110, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(180, 120, 255, 0.3);
+      background-color: rgba(75, 50, 130, 0.6);
+    }
+
+    .event-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .event-card h3 {
+      color: #e2caff;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    .event-card p {
+      font-size: 0.9em;
+      background: none;
+      border: none;
+      color: #d4baff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #cbb5ff;
+      font-size: 0.9em;
+      background-color: #22143c;
+      margin-top: 50px;
+      border-top: 2px solid #b57bff;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px;
+      }
+      .event-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="Personal Info.html">Home Page</a></li>
+      <li><a href="About Me.html">About Me</a></li>
+      <li><a href="ICT.html">ICT</a></li>
+      <li><a href="AP.html">AP</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>INTRO TO ICT — 2ND QUARTER / EVENTS</h1>
+    <p>Welcome!!</p>
+  </header>
+
+  <div class="content">
+    <section>
+      <h2>Lesson 1</h2>
+      <p>Through this lesson, I learned how important CSS is in making a website look neat and attractive. I used to think HTML was enough to build a webpage, but now I understand that CSS gives it life through design, color, and layout. It was interesting to see how one CSS file can control the style of many pages, which saves time and makes everything look consistent. I also learned about the three layers of a webpage which are the content, presentation, and behavior layers, and how each one works together to create a complete and interactive site. This lesson made me appreciate how much creativity and detail go into web design and it inspired me to keep learning more about how websites are made.</p>
+      <img src="Lesson 1.png" alt="Lesson 1">
+    </section>
+
+    <section>
+      <h2>Lesson 2</h2>
+      <p>In this lesson, I learned how CSS brings life, color, and structure to a webpage by blending creativity with logic. I discovered how selectors, properties, and values work together to control how every element is displayed, and how small changes can completely transform the look of a page. I also learned about the three types of CSS which are external, embedded, and inline, and how each one serves a unique purpose in designing a webpage. External style sheets can change the appearance of multiple pages at once, embedded styles can give a single page its own look, and inline styles can be used for small and specific edits. I realized that CSS is not just about decorating a page but about organizing it and making it more expressive. This lesson helped me appreciate how coding can be both technical and artistic, and how even simple lines of code can create something beautiful, meaningful, and full of character. </p>
+      <img src="lesson 2.png" alt="Lesson 2">
+    </section>
+
+    <section>
+      <h2>Lesson 3</h2>
+      <p>In this lesson, I learned how CSS allows designers to bring structure, creativity, and consistency to web pages through different types of style sheets. I discovered that inline, internal, and external CSS each serve different but equally important roles in web design. Inline CSS is written directly inside an HTML tag, and it is best used for quick, specific changes to a single element without affecting others. Internal CSS, which is written inside the head section of a webpage, affects all the elements within that page and is useful when giving one webpage its own unique look. External CSS, on the other hand, is stored in a separate file and can be linked to multiple pages, making it the most efficient and organized way to maintain a consistent style throughout an entire website. I also learned about the display property, which defines whether an element appears as a block or inline, influencing how the layout is arranged. The lesson also introduced the div and span tags, which act as containers that group or highlight parts of a webpage, allowing for more creative and flexible design. Through this lesson, I realized that CSS is not only about adding color or style but about creating order, personality, and harmony within a webpage. It taught me how design and logic work hand in hand to turn simple code into something functional and beautiful. </p>
+      <img src="inline t.png" alt="Lesson 3">
+<img src="inline w.png" alt="Lesson 3">
+<img src="external t.png" alt="Lesson 3">
+<img src="external css.png" alt="Lesson 3">
+<img src="external w.png" alt="Lesson 3">
+<img src="embedded t.png" alt="Lesson 3">
+<img src="embedded w.png" alt="Lesson 3">
+
+
+    </section>
+
+<section>
+      <h2>Lesson 4</h2>
+      <p>In this lesson, I learned how CSS rules, classes, and selectors work together to build the foundation of a well-designed and organized webpage. I discovered that a CSS rule is made up of a selector and a declaration, which defines how elements should appear. Each property and value combination serves a purpose, affecting everything from fonts and colors to spacing and layout. I also learned how classes act as reusable styles that can be applied to multiple elements, making it easier to maintain consistency throughout a design. What fascinated me most was the flexibility of classes, since a single element can have more than one class, allowing for layered and customized styles. I also understood how element plus class selectors make the design more specific by applying styles only to a certain type of element, which gives the designer more control and precision. Grouping selectors, on the other hand, makes the code cleaner and simpler, helping avoid repetition while still achieving the same result. This lesson made me appreciate how CSS is both logical and creative, a language that combines structure and artistry. It taught me that even small lines of code can bring a webpage to life when used thoughtfully, and that design is not just about what looks good but also about how well everything is organized and connected. </p>
+      <img src="class t.png" alt="Lesson 4">
+<img src="class w.png" alt="Lesson 4">
+<img src="class 2 t.png" alt="Lesson 4">
+<img src="class 2 w.png" alt="Lesson 4">
+
+
+    </section>
+
+<section>
+      <h2>Lesson 5</h2>
+      <p>In this lesson, I learned about CSS selectors and how they allow designers to target and style specific parts of a webpage. I discovered that selectors are the foundation of CSS because they determine which elements will be affected by a style rule. The element selector applies a style to all instances of a specific HTML tag, while the class selector is used to apply the same design to multiple elements that share the same class. The ID selector, on the other hand, is meant for unique elements that only appear once on a page, like a header or footer. I also learned about the universal selector, which applies styles to all elements at once, and the group selector, which helps simplify code by combining multiple elements that share the same style. The attribute selector was also interesting because it allows styling elements based on their attributes, giving designers precise control. Through this lesson, I realized that CSS selectors make design more efficient and organized by letting us style exactly what we want without affecting the rest of the page. It showed me that web design is not only about appearance but also about strategy and structure, where every choice in code contributes to both function and beauty. </p>
+      <img src="yes t.png" alt="Lesson 5">
+<img src="yes css.png" alt="Lesson 5">
+<img src="yes w.png" alt="Lesson 5">
+
+    </section>
+
+<section>
+      <h2>Lesson 6</h2>
+      <p>In this lesson, I learned how CSS can control the size, visibility, and interactivity of elements on a webpage, helping designers make their sites more organized and engaging. I discovered that properties like width, height, min-width, and max-height can change how a page looks and fits together, which makes it easier to design layouts that are neat and balanced. I also learned about visibility and how it can hide or show elements without completely removing them, which helps in arranging the content more effectively. What I found most interesting was the topic about pseudo-classes because they make a webpage feel more alive. I learned about the order of link, visited, hover, and active, and how each one controls the way a link changes when a user interacts with it. The hover effect especially caught my attention because it makes websites more interactive and fun to explore. Through this lesson, I realized that CSS is not just about colors and fonts but also about how users experience a webpage. It showed me that even small details in code can change how people feel when browsing a site, and that thoughtful design is about both creativity and purpose. </p>
+      <img src="sample t.png" alt="Lesson 6">
+<img src="sample css.png" alt="Lesson 6">
+<img src="sample w.png" alt="Lesson 6">
+
+
+    </section>
+
+
+
+  </div>
+
+  <hr>
+
+  <div class="events">
+    <h2>School Events ✨</h2>
+    <div class="event-container">
+      <div class="event-card">
+
+        <img src="bnw 1.jpg" alt="Buwan ng Wika">
+<img src="bnw 2.jpg" alt="Buwan ng Wika">
+        <h3>Buwan ng Wika</h3>
+        <p>During the celebration of Buwan ng Wika, where we all participated by wearing traditional Filipino costumes, <b>the most important thing I learned from the event</b> was the value of embracing and being proud of our culture and heritage. Wearing our traditional attire made me realize how rich and beautiful our Filipino identity is, and how important it is to keep our traditions alive. <b>I can apply what I learned in real-life situations</b> by showing respect for my roots, using our language with pride, and appreciating the diversity of Filipino culture in everyday life. <b>I actively participated in the event</b> by joining the activities, wearing my traditional costume with pride, and celebrating together with my classmates in an atmosphere filled with joy and unity. If <b>I were to teach this experience to a classmate</b>, I would explain that Buwan ng Wika is not just about wearing costumes or performing on stage, but about understanding and honoring who we are as Filipinos. Finally, <b>it is important to have events like this in school</b> because they remind us of our cultural identity, strengthen our sense of belonging, and help us develop a deeper love for our country and our language.
+</p>
+      </div>
+      <div class="event-card">
+
+        <img src="opening intrams 4.jpg" alt="Intramurals">
+        <img src="opening intrams 6.jpg" alt="Intramurals">
+        <h3>Intramurals Opening</h3>
+        <p>As a first-time muse representing Team Padolina in the intramurals, <b>the most important thing I learned from the event</b> was the true meaning of confidence and teamwork. I realized that being a muse is not just about wearing a sash or walking on stage, but about representing my team with pride, grace, and spirit. <b>I can apply what I learned in real-life situations</b> by carrying the same confidence and teamwork wherever I go, especially when facing challenges or opportunities that require courage and self-belief. <b>I actively participated in the event</b> by supporting my team throughout the activities, showing sportsmanship, and doing my best to bring positive energy to everyone around me. <b>If I were to teach this experience to a classmat</b>, I would explain that being part of such an event is about growth, unity, and learning to step out of your comfort zone to represent something bigger than yourself. Finally, <b>it is important to have events like this in school</b> because they build camaraderie, encourage students to showcase their talents, and teach values that go beyond academics. Intramurals remind us that learning also happens through experiences, connections, and the confidence we gain when we try something new.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="ci 1.jpg" alt="Intramurals">
+        <img src="ci 2.jpg" alt="Intramurals">
+<img src="ci 3.jpg" alt="Intramurals">
+<img src="ci 4.jpg" alt="Intramurals">
+        <h3>Intramurals Closing</h3>
+        <p>During the closing of the intramurals, where I represented Team Padolina in the Mr. and Ms. Intrams contest, <b>the most important thing I learned from the event</b> was that success comes from confidence, perseverance, and believing in yourself no matter how nervous you feel. Standing on stage and hearing my name called as the winner of <b>Best in Sportswear and 1st Runner Up</b> made me realize how hard work and dedication truly pay off. <b>I can apply what I learned in real-life situations</b> by always giving my best, staying humble, and remembering that every opportunity is a chance to grow and learn. <b>I actively participated in the event</b> by proudly representing my team, performing with confidence, and showing the values of sportsmanship and unity throughout the competition. If <b>I were to teach this experience to a classmate</b>, I would explain that winning is not only about trophies or titles but about how you carry yourself, inspire others, and represent your team with pride. Finally, <b>it is important to have events like this in school</b> because they build confidence, strengthen friendships, and remind us that school life is not just about academics but also about discovering our talents and celebrating our achievements together as one community.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="Sci 1.jpg" alt="Science Month">
+<img src="Sci 2.jpg" alt="Science Month">
+        <h3>Science Month</h3>
+        <p>During the celebration of Science Month, where our section won <b>Best in WINS Corner</b> and my research team won <b>Best in Life Science Research Study</b> for our classroom-based project, <b>the most important thing I learned from the event</b> was that teamwork, curiosity, and perseverance can lead to great achievements. Working with my group taught me that every idea, no matter how small, can make a difference when everyone contributes and believes in the goal. <b>I can apply what I learned in real-life situations</b> by continuing to work hard, stay curious, and value collaboration in both school and everyday life. <b>I actively participated in the event</b> by helping prepare our WINS Corner display, presenting our research study with confidence, and supporting my classmates throughout the activities. If <b>I were to teach this experience to a classmate</b>, I would explain that Science Month is not only about experiments or competitions but about exploring, discovering, and learning how science connects to our daily lives. Finally, <b>it is important to have events like this in school</b> because they inspire students to think critically, nurture their creativity, and help them see how science can be both fun and meaningful in shaping the future.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="ap 1.jpg" alt="AP Month">
+<img src="ap 2.jpg" alt="AP Month">
+<img src="ap 3.jpg" alt="AP Month">
+        <h3>AP Month</h3>
+        <p>During the celebration of AP Month, where I joined classroom-based activities like poster making and digital cartoon creation, <b>the most important thing I learned from the event</b> was how history and creativity can come together to express ideas about our country and culture. By taking part in these activities, I realized that understanding our past is not just about reading lessons but also about finding ways to share them through art and imagination. <b>I can apply what I learned in real-life situations</b> by appreciating our history more deeply, showing patriotism in simple ways, and using creativity to express meaningful messages about society. <b>I actively participated in the event</b> by supporting my classmates in their contests, helping with class outputs, and giving my best effort in the poster making and digital cartoon activities. If <b>I were to teach this experience to a classmate</b>, I would explain that AP Month teaches us to value our identity as Filipinos and to see history as something alive and relevant to our lives. Finally, <b>it is important to have events like this in school</b> because they allow students to connect what they learn in class to real-life expressions of culture, teamwork, and national pride.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="td 1.jpg" alt="Teachers' Day">
+<img src="td 2.jpg" alt="Teachers' Day">
+<video width="500" height="400" controls>
+    <source src="td.mp4" type="video/mp4">
+  </video>
+        <h3>Teachers' Day</h3>
+        <p><b>What is the most important thing I learned from the event?</b> From the Teachers’ Day celebration, I learned how meaningful it is to show appreciation for our teachers. Being part of the class program and the school-wide event made me realize that even small gestures, like singing or helping organize, can make them feel valued and celebrated. <b>How can I apply what I learned in real-life situations?</b> I can apply this by taking time to appreciate and thank the people who guide and support me, whether it’s teachers, family members, or mentors. Showing gratitude makes relationships stronger and creates a positive environment. <b>Did I actively participate in the event? How?</b> Yes, I actively participated by helping organize our class program, assisting in the school-wide program as an SSLG member, and singing during our classroom performance to honor our teachers. It felt really rewarding to see them smile and enjoy the celebration. <b>If I were to teach this topic/subject to a classmate, how would I explain it?</b> I would explain that celebrating teachers is important because it acknowledges their hard work and dedication. Even small actions, like performing, helping organize, or giving a simple “thank you,” can show how much we care and appreciate their efforts. <b>Why is it important to have an event (per subject)? Explain your answer.</b> Events like Teachers’ Day are important because they give us a chance to express gratitude, celebrate the people who teach and guide us, and build a sense of community in school. They remind us that appreciation and kindness make a big difference in other people’s lives.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="rs.jpg" alt="Rosary Month">
+<video width="500" height="400" controls>
+    <source src="rs 1.mp4" type="video/mp4">
+  </video>
+        <h3>Rosary Month</h3>
+        <p><b>What is the most important thing I learned from the event?</b> During Rosary Month, I learned how powerful and comforting prayer can be. Participating in every Mass reminded me that faith can bring peace and strengthen our spirit, and that coming together in prayer creates a sense of unity and connection with God and with others. <b>How can I apply what I learned in real-life situations?</b> I can apply this by taking time to pray, reflect, and find quiet moments in my daily life. It helps me stay thankful, patient, and mindful, even when things get busy or stressful. <b>Did I actively participate in the event? How?</b> Yes, I actively participated by singing in every Mass as the solo female lead and as part of the choir. Being able to contribute through music made me feel deeply involved in the celebration and allowed me to help create a meaningful and uplifting atmosphere for everyone. <b>If I were to teach this topic/subject to a classmate, how would I explain it?</b> I would explain that Rosary Month is a time to reflect, pray, and strengthen our faith. I’d share that participating in Mass and prayer, even through music, helps us connect with God and experience the comfort and joy that comes from shared devotion. <b>Why is it important to have an event (per subject)? Explain your answer.</b> Celebrating Rosary Month is important because it reminds us of the value of faith, reflection, and community. Events like this help us pause from our daily routines, come together as a class and parish, and share meaningful experiences that nurture our spiritual growth.
+</p>
+      </div>
+      <div class="event-card">
+
+<img src="tkd 1.jpg" alt="Cluster Meet">
+<img src="tkd 2.jpg" alt="Cluster Meet">
+<video width="500" height="400" controls>
+    <source src="tkd.mp4" type="video/mp4">
+  </video>
+        <h3>Cluster Meet</h3>
+        <p><b>What is the most important thing I learned from the event?</b> From my first Cluster Meet, I learned the importance of courage, preparation, and believing in myself. Competing with students from other schools was intimidating at first, but it showed me that determination and focus can lead to great results. <b>How can I apply what I learned in real-life situations?</b> I can apply this lesson by facing challenges with confidence, preparing well, and not being afraid to try new experiences, whether in school competitions, projects, or personal goals. <b>Did I actively participate in the event? How?</b> Yes, I actively participated by joining the Taekwondo cluster meet and giving my best in every match. My hard work paid off when I won 1st place, receiving the gold medal in the Kyurogi Lightweight category. It was such an exciting and proud moment for me. Now I am one of the qualified athletes joining this years Division Meet. <b>If I were to teach this topic/subject to a classmate, how would I explain it?</b> I would explain that participating in events like the Cluster Meet teaches more than just skills. It builds confidence, discipline, and sportsmanship. I would share how practicing, staying focused, and believing in yourself can lead to achievements you never thought were possible. <b>Why is it important to have an event (per subject)? Explain your answer.</b> Events like the Cluster Meet are important because they encourage students to challenge themselves, develop new skills, and celebrate their hard work. They also promote teamwork, respect for others, and a sense of pride in representing your school.
+      </div>
+      <div class="event-card">
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with 💜 by Micah Angelique R. Jimenez — ICT Portfolio</p>
+  </footer>
+
+</body>
+</html>
