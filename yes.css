@@ -1,0 +1,7 @@
+p[class] {background-color: lightgreen;
+  padding: 8px;
+  border-radius: 4px;}
+
+p[class="third"] {color: darkblue;
+  font-weight: bold;
+  font-size: 18px;}
